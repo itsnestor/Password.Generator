@@ -5,6 +5,7 @@
 The goal of the project was to make a password generator using javascript. Using this generator, a user can randomly generate a password that meets certain criteria so that a strong password will be created for great security.
 
 The password should be able to include or exclude:
+    
     * Lowercase Letters
     * Uppercase Letters
     * Special Characters
