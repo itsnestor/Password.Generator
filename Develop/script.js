@@ -21,11 +21,22 @@ var specialChar = [" ", "!", "#", "$", "%", "&", "*", "+", "-", ".", "/", ":", "
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var pwChar = [];
 
+// Prompt for number of characters in password
 function generatePassword(){
   var pwLength = parseInt(prompt("Please choose how many characters you would like your password to be. (Between 8-128 characters)"));
 
-  if (pwLength < 8 || pwLength > 128){
+  // Making sure the password length is within specified values
+  if (pwLength < 8 || pwLength > 128) {
     alert("Password needs to be between 8 to 128 characters long");
+    return;
+  }
+  var needLowerCase = confirm("Would you like lowercase characters in your password? (Ok for yes or Cancel for no)");
+  var needUpperCase = confirm("Would you like uppercase characters in your password? (Ok for yes or Cancel for no)");
+  var needSpecialChar = confirm("Would you like special characters in your password? (Ok for yes or Cancel for no)");
+  var needNumber = confirm("Would you like number characters in your password? (Ok for yes or Cancel for no)");
+
+  if (needLowerCase === false && needUpperCase === false && needSpecialChar === false && needNumber === false){
+    alert("Password needs at least one of the options.");
     return;
   }
 }
